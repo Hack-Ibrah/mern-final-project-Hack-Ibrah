@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 185 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 185 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 185 10% 15%;
+
+    --primary: 175 65% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 35 85% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 185 15% 96%;
+    --muted-foreground: 185 8% 45%;
+
+    --accent: 12 88% 68%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 185 20% 88%;
+    --input: 185 20% 88%;
+    --ring: 175 65% 42%;
+
+    --radius: 0.75rem;
+
+    /* Healthcare-specific tokens */
+    --health-green: 150 70% 45%;
+    --health-blue: 200 85% 50%;
+    --warm-amber: 35 85% 60%;
+    --soft-coral: 12 88% 68%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(175 65% 42%) 0%, hsl(185 70% 50%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(35 85% 60%) 0%, hsl(12 88% 68%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(185 15% 96%) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(185 20% 20% / 0.06);
+    --shadow-md: 0 4px 16px hsl(185 20% 20% / 0.1);
+    --shadow-lg: 0 8px 32px hsl(185 20% 20% / 0.12);
+    --shadow-glow: 0 0 24px hsl(175 65% 42% / 0.25);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 185 15% 8%;
+    --foreground: 185 5% 95%;
+
+    --card: 185 12% 12%;
+    --card-foreground: 185 5% 95%;
+
+    --popover: 185 12% 12%;
+    --popover-foreground: 185 5% 95%;
+
+    --primary: 175 65% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 35 80% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 185 12% 18%;
+    --muted-foreground: 185 8% 65%;
+
+    --accent: 12 85% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 185 12% 22%;
+    --input: 185 12% 22%;
+    --ring: 175 65% 45%;
+    
+    --shadow-sm: 0 2px 8px hsl(0 0% 0% / 0.3);
+    --shadow-md: 0 4px 16px hsl(0 0% 0% / 0.4);
+    --shadow-lg: 0 8px 32px hsl(0 0% 0% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Leaflet map custom styles */
+.leaflet-container {
+  font-family: inherit;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.leaflet-popup-content {
+  margin: 0.75rem;
+  font-family: inherit;
+}
+
+.custom-marker {
+  background: transparent;
+  border: none;
+}
+
+/* Ensure Leaflet controls are visible */
+.leaflet-control-zoom a {
+  color: #333 !important;
+}
+
+.leaflet-control-attribution {
+  font-size: 10px;
+}

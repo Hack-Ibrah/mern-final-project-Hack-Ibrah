@@ -1,0 +1,5 @@
+# Only ignore files that are truly not needed for deployment
+.env.local
+.env.development
+*.log
+.netlify/
